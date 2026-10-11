@@ -1,0 +1,30 @@
+import { Contacts } from "@/components/homepage/Contacts";
+import { FeedbackSection } from "@/components/homepage/FeedbackSection";
+import { Hero } from "@/components/homepage/Hero";
+import { NewsSection } from "@/components/homepage/NewsSection";
+import { PricingSection } from "@/components/homepage/PricingSection";
+import { Sec1 } from "@/components/homepage/Sec1";
+import { ServicesSection } from "@/components/homepage/ServicesSection";
+import { TeamSection } from "@/components/homepage/TeamSection";
+import { Welcome } from "@/components/homepage/Welcome";
+import { getBlogPosts, getServices, getTeamMembers } from "@/lib/content";
+
+export default function HomePage() {
+  const services = getServices().slice(0, 3);
+  const team = getTeamMembers().slice(0, 3);
+  const posts = getBlogPosts().slice(0, 3);
+
+  return (
+    <div>
+      <Hero />
+      <ServicesSection services={services} />
+      <Sec1 />
+      <TeamSection team={team} />
+      <Welcome />
+      <PricingSection />
+      <FeedbackSection />
+      <NewsSection posts={posts} />
+      <Contacts />
+    </div>
+  );
+}
