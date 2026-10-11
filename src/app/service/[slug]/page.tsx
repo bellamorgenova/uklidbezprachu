@@ -1,6 +1,7 @@
 import { PostLayout } from "@/components/PostLayout";
 import { getService, getServices } from "@/lib/content";
 import { sectionHref, SECTION } from "@/lib/sections";
+import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -14,10 +15,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getService(slug);
   if (!post) return {};
-  return {
+  return buildPageMetadata({
     title: post.data.title,
     description: post.data.description,
-  };
+    path: `/service/${slug}`,
+    ogImage: post.data.thumbnail ?? undefined,
+  });
 }
 
 export default async function ServiceDetailPage({ params }: Props) {

@@ -1,6 +1,7 @@
 import { PostLayout } from "@/components/PostLayout";
 import { getTeamMember, getTeamMembers } from "@/lib/content";
 import { sectionHref, SECTION } from "@/lib/sections";
+import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -14,10 +15,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const member = getTeamMember(slug);
   if (!member) return {};
-  return {
+  return buildPageMetadata({
     title: member.data.title,
     description: member.data.description,
-  };
+    path: `/team/${slug}`,
+    noIndex: true,
+    ogImage: member.data.thumbnail ?? undefined,
+  });
 }
 
 export default async function TeamDetailPage({ params }: Props) {

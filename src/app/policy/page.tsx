@@ -1,9 +1,13 @@
+import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Ochrana osobních údajů",
-};
+  description:
+    "Zásady zpracování osobních údajů na webu Úklid bez prachu — úklid domácností a firem v Orlickoústecku.",
+  path: "/policy",
+});
 
 export default function PolicyPage() {
   return (

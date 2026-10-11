@@ -2,12 +2,15 @@ import { TeamCard } from "@/components/card/TeamCard";
 import { TeamHiringCard } from "@/components/card/TeamHiringCard";
 import { getTeamMember } from "@/lib/content";
 import { sectionHref, SECTION } from "@/lib/sections";
+import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Tým",
-};
+  path: "/team",
+  noIndex: true,
+});
 
 export default function TeamListPage() {
   const bella = getTeamMember("t1");

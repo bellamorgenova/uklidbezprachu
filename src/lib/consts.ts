@@ -2,7 +2,7 @@ import { sectionHref, SECTION } from "./sections";
 
 export const SITE_TITLE = "Úklid bez prachu";
 export const SITE_DESCRIPTION =
-  "Profesionální úklid domácností a firem — spolehlivě, pečlivě a za férové ceny.";
+  "Profesionální úklid domácností a firem v Orlickoústecku — běžný i generální úklid, tepování a debordelizace. Spolehlivě, pečlivě a za férové ceny.";
 
 /** Hlavní výzva k akci (hlavička + mobilní menu). */
 export const CTA_LABEL = "Poptat služby";

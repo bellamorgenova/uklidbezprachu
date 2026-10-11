@@ -1,9 +1,13 @@
+import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Obchodní podmínky",
-};
+  description:
+    "Obchodní podmínky služeb úklidu Úklid bez prachu — domácnosti a firmy v Orlickoústecku.",
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (

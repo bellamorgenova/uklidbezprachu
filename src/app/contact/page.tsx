@@ -1,10 +1,13 @@
 import { Contacts } from "@/components/homepage/Contacts";
+import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Kontakt",
-};
+  path: "/contact",
+  noIndex: true,
+});
 
 export default function ContactPage() {
   return (
