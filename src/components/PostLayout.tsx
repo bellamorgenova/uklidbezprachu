@@ -33,7 +33,7 @@ export function PostLayout({
       <article className="post">
         <div className="breadcrumbs text-sm">
           <ul className="flex! flex-wrap">
-            <li><Link href="/">Home</Link></li>
+            <li><Link href="/">Domů</Link></li>
             <li><Link href={parentHref}>{breadcrumbParent}</Link></li>
             <li>{title}</li>
           </ul>
@@ -43,10 +43,10 @@ export function PostLayout({
             <FormattedDate date={pubDate} />
             {updatedDate && (
               <div className="last-updated-on">
-                Last updated on <FormattedDate date={updatedDate} />
+                Naposledy upraveno <FormattedDate date={updatedDate} />
               </div>
             )}
-            {authorName && <span>By {authorName}</span>}
+            {authorName && <span>Autor: {authorName}</span>}
             {categoryTitle && (
               <span className="bg-main text-white rounded py-1 px-2">
                 {categoryTitle}
@@ -73,7 +73,7 @@ export function PostLayout({
             <hr className="mt-5 lg:mt-20 opacity-10" />
             <div className="flex justify-between flex-wrap items-center gap-4 pt-5 lg:pt-10">
               <Link href={parentHref} className="btn btn-outline inline-flex gap-2">
-                <ArrowLeft size={18} /> Go Back
+                <ArrowLeft size={18} /> Zpět
               </Link>
             </div>
           </div>

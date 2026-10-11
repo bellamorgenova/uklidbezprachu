@@ -12,50 +12,50 @@ type Plan = {
 
 const monthly: Plan[] = [
   {
-    name: "Basic Package",
-    price: "59.00",
-    period: "Monthly",
+    name: "Základní",
+    price: "1 490",
+    period: "měsíčně",
     features: [
-      "Dusting of all surfaces",
-      "Sweeping and mopping floors",
-      "Vacuuming carpets and rugs",
-      "Cleaning of kitchen surfaces",
-      "Cleaning of bathroom surfaces",
-      "Emptying trash bins",
+      "Utření prachu ze všech dostupných ploch",
+      "Vytření podlah",
+      "Vysátí koberců a čalounění",
+      "Úklid kuchyně (linky, dřez, spotřebiče zvenku)",
+      "Úklid koupelny a WC",
+      "Vyprázdnění košů",
     ],
   },
   {
-    name: "Enterprise Package",
-    price: "69.00",
-    period: "Monthly",
+    name: "Rozšířený",
+    price: "1 890",
+    period: "měsíčně",
     features: [
-      "All services in the Basic Plan",
-      "Detailed dusting",
-      "Wiping down of kitchen appt",
-      "Cleaning inside the microwave",
-      "Changing bed linens",
-      "Spot cleaning walls and doors",
+      "Vše ze Základního balíčku",
+      "Detailnější utírání prachu",
+      "Mytí kuchyňských skříněk zvenku",
+      "Vnitřek mikrovlnné trouby",
+      "Výměna ložního prádla (dle dohody)",
+      "Lokální odstranění skvrn na zdech a dveřích",
     ],
   },
   {
-    name: "Premium Package",
-    price: "99.00",
-    period: "Monthly",
+    name: "Kompletní",
+    price: "2 490",
+    period: "měsíčně",
     features: [
-      "All services in the Clean Plan",
-      "Deep cleaning of kitchen appt",
-      "Baseboards, door frames, & vents",
-      "Organization of closets pantries",
-      "Carpet, upholstery spot cleaning",
-      "Detailed bathroom cleaning",
+      "Vše z Rozšířeného balíčku",
+      "Hlubší úklid kuchyně",
+      "Lišty, rámy dveří a větrací mřížky",
+      "Úklid ve skříních a spíži (po dohodě)",
+      "Čištění koberců a čalounění — lokálně",
+      "Důkladný úklid koupelny včetně spár",
     ],
   },
 ];
 
 const yearly: Plan[] = [
-  { ...monthly[0], price: "159.00" },
-  { ...monthly[1], price: "169.00" },
-  { ...monthly[2], price: "199.00" },
+  { ...monthly[0], price: "3 990", period: "ročně" },
+  { ...monthly[1], price: "4 590", period: "ročně" },
+  { ...monthly[2], price: "5 990", period: "ročně" },
 ];
 
 function PlanCard({ plan }: { plan: Plan }) {
@@ -69,7 +69,7 @@ function PlanCard({ plan }: { plan: Plan }) {
           className="flex gap-2 items-end bg-main text-white justify-center rounded-lg p-3"
         >
           <p className="text-3xl font-bold">
-            <span className="text-base">$</span> {plan.price} /
+            {plan.price} <span className="text-base font-normal">Kč</span> /
           </p>
           <small>{plan.period}</small>
         </div>
@@ -95,8 +95,11 @@ export function PricingSection() {
       <div className="[grid-area:1/1/2/2] text-white pt-20">
         <div className="container text-center">
           <div className="mx-auto max-w-xl mb-4">
-            <p className="text-sm mb-1">Our Pricing</p>
-            <h2>Choose From Our Lowest Plans and Prices</h2>
+            <p className="text-sm mb-1">Orientační ceník</p>
+            <h2>Balíčky pro pravidelný úklid</h2>
+            <p className="text-sm mt-2 opacity-90">
+              Přesnou cenu upřesníme podle velikosti prostor a rozsahu práce.
+            </p>
           </div>
           <div className="mt-5 grid w-full">
             <div
@@ -107,14 +110,14 @@ export function PricingSection() {
                 className={`tab ${tab === "monthly" ? "tab-active" : ""}`}
                 onClick={() => setTab("monthly")}
               >
-                Monthly
+                Měsíčně
               </button>
               <button
                 type="button"
                 className={`tab ${tab === "yearly" ? "tab-active" : ""}`}
                 onClick={() => setTab("yearly")}
               >
-                Yearly
+                Ročně
               </button>
             </div>
             <div className="mt-10">

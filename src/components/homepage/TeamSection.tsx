@@ -13,14 +13,13 @@ export function TeamSection({
         <div
           className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 border-b border-b-main pb-10"
         >
-          <h2 className="capitalize">
-            Effective Cleaning Requires an Expert Cleaning Team
-          </h2>
+          <h2>Čistota zvládneme jen s dobrým týmem</h2>
           <div>
-            <p className="font-semibold mb-3 text-xl">Expert Team</p>
+            <p className="font-semibold mb-3 text-xl">Kdo u vás uklízí</p>
             <p className="mb-3">
-              We have professional expert cleaning staff ensuring top-notch
-              cleanliness and hygiene for your space.
+              Naši pracovníci mají zkušenosti s běžnými domácnostmi i kancelářemi.
+              Dbáme na šetrnost k vašemu majetku a na to, aby výsledek byl
+              vidět i cítit.
             </p>
           </div>
         </div>

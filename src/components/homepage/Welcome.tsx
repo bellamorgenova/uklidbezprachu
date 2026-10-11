@@ -3,11 +3,11 @@ import { Check } from "lucide-react";
 import Image from "next/image";
 
 const perks = [
-  "Vetted professionals",
-  "Next day availability",
-  "Standard cleaning tasks",
-  "Best Quality",
-  "Affordable Prices",
+  "Prověřený tým",
+  "Termín často už do druhého dne",
+  "Úklid podle vašeho seznamu",
+  "Důraz na detail",
+  "Férové ceny",
 ];
 
 export function Welcome() {
@@ -23,11 +23,11 @@ export function Welcome() {
             className="w-auto h-auto"
           />
           <div>
-            <h2>Welcome To Our Pro-cleaning Company!</h2>
+            <h2>Úklid bez prachu — váš partner pro čistý domov i firmu</h2>
             <p>
-              We make your space shine! Professional and reliable cleaning service
-              company providing top-notch solutions for homes and businesses.
-              Satisfaction guaranteed!
+              Jsme lokální úklidová služba, na kterou se můžete spolehnout.
+              Domácnosti, kanceláře i jednorázové úklidy po rekonstrukci zvládneme
+              s rozmyslem a bez zbytečných komplikací.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 my-6 gap-4">
               {perks.map((label) => (

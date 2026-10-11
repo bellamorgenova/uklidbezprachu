@@ -13,12 +13,12 @@ export function ServicesSection({
         <div
           className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 border-b border-b-main pb-10"
         >
-          <h2 className="capitalize">We always provide the best service</h2>
+          <h2>Služby, které nejvíc využíváte</h2>
           <div>
-            <p className="font-semibold mb-3 text-xl">Services</p>
+            <p className="font-semibold mb-3 text-xl">Co umíme</p>
             <p className="mb-3">
-              While we can customize your cleaning plan to suit your needs, most
-              clients schedule regular cleaning services:
+              Plán úklidu přizpůsobíme vašim potřebám — většina zákazníků volí
+              pravidelný úklid v týdenním nebo měsíčním rytmu.
             </p>
           </div>
         </div>

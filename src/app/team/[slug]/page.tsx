@@ -1,5 +1,6 @@
 import { PostLayout } from "@/components/PostLayout";
 import { getTeamMember, getTeamMembers } from "@/lib/content";
+import { sectionHref, SECTION } from "@/lib/sections";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -31,8 +32,8 @@ export default async function TeamDetailPage({ params }: Props) {
       pubDate={member.data.pubDate}
       updatedDate={member.data.updatedDate}
       thumbnail={member.data.thumbnail}
-      breadcrumbParent="Team"
-      parentHref="/team"
+      breadcrumbParent="Tým"
+      parentHref={sectionHref(SECTION.team)}
       content={member.content || member.data.description}
     />
   );

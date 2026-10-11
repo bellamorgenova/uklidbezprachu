@@ -1,5 +1,6 @@
 import { PostLayout } from "@/components/PostLayout";
 import { getService, getServices } from "@/lib/content";
+import { sectionHref, SECTION } from "@/lib/sections";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -31,8 +32,8 @@ export default async function ServiceDetailPage({ params }: Props) {
       pubDate={post.data.pubDate}
       updatedDate={post.data.updatedDate}
       thumbnail={post.data.thumbnail}
-      breadcrumbParent="Service"
-      parentHref="/service"
+      breadcrumbParent="Služby"
+      parentHref={sectionHref(SECTION.services)}
       content={post.content}
     />
   );

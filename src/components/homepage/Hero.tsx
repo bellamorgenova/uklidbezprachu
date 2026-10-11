@@ -18,11 +18,11 @@ export function Hero() {
       <div className="absolute inset-0 bg-white/80 md:bg-transparent -z-10" />
       <div className="container z-10 relative">
         <div className="sm:max-w-md md:max-w-xl text-center sm:text-left">
-          <p className="text-sm mb-1">Quality cleaning at a fair price.</p>
-          <h1>Specialized, efficient, and thorough cleaning services</h1>
+          <p className="text-sm mb-1">Kvalitní úklid za rozumnou cenu</p>
+          <h1>Pečlivý úklid domácností i kanceláří bez zbytečného prachu</h1>
           <p>
-            We provide performing cleaning tasks using the least amount of time,
-            energy, and money.
+            Ušetříme vám čas — přijedeme v dohodnutý termín, přineseme vlastní
+            prostředky a odneseme s sebou i nepořádek navíc.
           </p>
         </div>
       </div>

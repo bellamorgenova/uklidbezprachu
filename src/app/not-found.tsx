@@ -3,10 +3,10 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <section className="section container text-center">
-      <h1>404</h1>
-      <p className="mb-6">Page not found.</p>
+      <h1>Stránka nenalezena</h1>
+      <p className="mb-6">Omlouváme se, tato adresa na webu neexistuje.</p>
       <Link href="/" className="btn bg-main text-white border-main">
-        Back to home
+        Na úvodní stránku
       </Link>
     </section>
   );

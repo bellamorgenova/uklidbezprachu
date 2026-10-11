@@ -1,8 +1,8 @@
 import { sectionHref, SECTION } from "./sections";
 
-export const SITE_TITLE = "uklidbezprachu_template";
+export const SITE_TITLE = "Úklid bez prachu";
 export const SITE_DESCRIPTION =
-  "Specialized, efficient, and thorough cleaning services";
+  "Profesionální úklid domácností a firem — spolehlivě, pečlivě a za férové ceny.";
 
 /** Hlavní výzva k akci (hlavička + mobilní menu). */
 export const CTA_LABEL = "Poptat služby";

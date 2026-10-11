@@ -1,6 +1,6 @@
 {
-  "name": "uklidbezprachu_template",
-  "short_name": "uklidbezprachu_template",
+  "name": "Úklid bez prachu",
+  "short_name": "Úklid bez prachu",
   "start_url": "/",
   "description": "Specialized, efficient, and thorough cleaning services",
   "display_override": ["window-control-overlay", "minimal-ui"],

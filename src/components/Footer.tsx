@@ -10,10 +10,10 @@ export function Footer() {
         <div className="container">
           <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-10">
             <div>
-              <Logo mode="dark" />
+              <Logo onDarkBackground />
               <p className="mt-4">
-                Stay updated with our latest cleaning tips, service updates, and
-                helpful articles on maintaining a spotless home.
+                Profesionální úklid pro domácnosti a firmy. Sledujte nás — brzy
+                přidáme tipy, jak udržet domov čistý s minimem námahy.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-10">
@@ -40,7 +40,7 @@ export function Footer() {
               </nav>
             </div>
             <div className="grid gap-3">
-              <h3 className="text-xl font-semibold">Newsletter</h3>
+              <h3 className="text-xl font-semibold">Novinky e-mailem</h3>
               <form
                 action="/"
                 method="get"
@@ -48,7 +48,7 @@ export function Footer() {
               >
                 <input
                   type="email"
-                  placeholder="Email Goes here"
+                  placeholder="Váš e-mail"
                   className="input text-black w-full"
                   name="subscribe_email"
                   id="subscribe-email"
@@ -57,7 +57,7 @@ export function Footer() {
                   className="btn bg-main border-main text-white rounded-lg hover:bg-green-600 lg:mr-auto shadow-none"
                   type="submit"
                 >
-                  Send
+                  Odebírat
                 </button>
               </form>
             </div>
@@ -66,7 +66,7 @@ export function Footer() {
       </div>
       <div className="footer-btm w-full">
         <div className="container text-center border-t border-white py-10">
-          &copy; {year} uklidbezprachu_template — port ProCleaning (MIT)
+          &copy; {year} Úklid bez prachu
         </div>
       </div>
     </footer>

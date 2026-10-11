@@ -11,23 +11,26 @@ export function Drawer() {
         aria-label="close sidebar"
         className="drawer-overlay"
       >
-        <span className="sr-only">Close menu</span>
+        <span className="sr-only">Zavřít menu</span>
       </label>
-      <div className="menu bg-dark text-white min-h-full w-80 p-4 flex flex-col">
-        <Logo mode="dark" />
-        <ul className="mt-4">
+      <div className="menu bg-white text-gray-800 min-h-full w-80 p-4 flex flex-col border-r border-gray-200">
+        <Logo compact />
+        <ul className="mt-6 gap-1">
           {NAV_MENU.map((item) => (
             <li key={item.url}>
-              <HeaderLink href={item.url} className="hover:bg-black">
+              <HeaderLink
+                href={item.url}
+                className="rounded-lg hover:bg-gray-100 font-medium"
+              >
                 {item.title}
               </HeaderLink>
             </li>
           ))}
         </ul>
-        <div className="flex flex-col gap-2 items-center w-full mt-auto">
+        <div className="flex flex-col gap-2 items-stretch w-full mt-auto pt-6">
           <a
             href={sectionHref(SECTION.contact)}
-            className="btn bg-main border-main text-white rounded-lg hover:bg-green-600 hover:text-white! w-full"
+            className="btn bg-main border-main text-white rounded-lg hover:bg-green-700 hover:border-green-700 w-full shadow-none"
           >
             {CTA_LABEL}
           </a>
