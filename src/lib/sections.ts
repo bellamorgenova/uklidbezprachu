@@ -6,6 +6,7 @@ export const SECTION = {
   team: "tym",
   contact: "kontakt",
   pricing: "cenik",
+  work: "nase-prace",
   reviews: "reference",
 } as const;
 

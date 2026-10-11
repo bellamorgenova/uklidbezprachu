@@ -1,73 +1,47 @@
-import { sectionHref, SECTION } from "@/lib/sections";
+import Image from "next/image";
 import Link from "next/link";
-import { HeaderLink } from "./HeaderLink";
+
 import { Logo } from "./Logo";
 
+const PSI_SALON_URL = "https://www.psisalonmorgen.cz";
+
 export function Footer() {
-  const year = new Date().getFullYear();
   return (
     <footer className="footer bg-dark text-white gap-0 block">
-      <div className="footer-top w-full py-20">
+      <div className="w-full py-16 md:py-20">
         <div className="container">
-          <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-10">
-            <div>
+          <div
+            className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 lg:gap-24 text-center"
+          >
+            <div className="flex flex-col items-center max-w-sm">
               <Logo onDarkBackground />
-              <p className="mt-4">
-                Profesionální úklid pro domácnosti a firmy. Sledujte nás — brzy
-                přidáme tipy, jak udržet domov čistý s minimem námahy.
+              <p className="mt-4 text-white/95 text-base leading-relaxed">
+                Profesionální úklid pro domácnosti a firmy.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-10">
-              <nav className="grid gap-3">
-                <h3 className="text-xl font-semibold">Firma</h3>
-                <HeaderLink href={sectionHref(SECTION.about)} className="hover:underline hover:text-main">
-                  O nás
-                </HeaderLink>
-                <HeaderLink href={sectionHref(SECTION.services)} className="hover:underline hover:text-main">
-                  Služby
-                </HeaderLink>
-                <HeaderLink href={sectionHref(SECTION.team)} className="hover:underline hover:text-main">
-                  Tým
-                </HeaderLink>
-              </nav>
-              <nav className="grid gap-3">
-                <h3 className="text-xl font-semibold">Informace</h3>
-                <Link href="/policy" className="hover:underline hover:text-main">
-                  Ochrana osobních údajů
-                </Link>
-                <Link href="/terms" className="hover:underline hover:text-main">
-                  Obchodní podmínky
-                </Link>
-              </nav>
-            </div>
-            <div className="grid gap-3">
-              <h3 className="text-xl font-semibold">Novinky e-mailem</h3>
-              <form
-                action="/"
-                method="get"
-                className="mt-3 grid gap-4 grid-cols-1 sm:grid-cols-[2fr_1fr] lg:grid-cols-1"
+            <div className="flex flex-col items-center max-w-sm">
+              <Link
+                href={PSI_SALON_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-lg bg-black/40 px-3 py-2 hover:opacity-90 transition-opacity"
+                title="Psí salon Morgen"
               >
-                <input
-                  type="email"
-                  placeholder="Váš e-mail"
-                  className="input text-black w-full"
-                  name="subscribe_email"
-                  id="subscribe-email"
+                <Image
+                  src="/img/psi-salon-morgen-logo.png"
+                  alt="Psí salon Morgen — stříhání a péče o psy"
+                  width={694}
+                  height={268}
+                  sizes="(max-width: 768px) 260px, 320px"
+                  className="h-[72px] sm:h-[84px] md:h-[96px] w-auto object-contain"
+                  unoptimized
                 />
-                <button
-                  className="btn bg-main border-main text-white rounded-lg hover:bg-green-600 lg:mr-auto shadow-none"
-                  type="submit"
-                >
-                  Odebírat
-                </button>
-              </form>
+              </Link>
+              <p className="mt-4 text-white/95 text-base leading-relaxed">
+                Stříhání, koupání, dentální hygiena a hlídání pejsků.
+              </p>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="footer-btm w-full">
-        <div className="container text-center border-t border-white py-10">
-          &copy; {year} Úklid bez prachu
         </div>
       </div>
     </footer>

@@ -1,5 +1,6 @@
 import { Contacts } from "@/components/homepage/Contacts";
 import { FeedbackSection } from "@/components/homepage/FeedbackSection";
+import { OurWorkSection } from "@/components/homepage/OurWorkSection";
 import { Hero } from "@/components/homepage/Hero";
 import { PricingSection } from "@/components/homepage/PricingSection";
 import { Sec1 } from "@/components/homepage/Sec1";
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Sec1 />
       <TeamSection />
       <PricingSection />
+      <OurWorkSection />
       <FeedbackSection />
       <Contacts />
     </div>
