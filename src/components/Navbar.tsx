@@ -9,7 +9,7 @@ export function Navbar() {
         <li key={item.url}>
           <HeaderLink
             href={item.url}
-            className="rounded-lg hover:bg-gray-100 hover:text-main font-medium px-3"
+            className="rounded-lg text-gray-800 hover:bg-gray-100 hover:text-main font-medium px-3"
           >
             {item.title}
           </HeaderLink>

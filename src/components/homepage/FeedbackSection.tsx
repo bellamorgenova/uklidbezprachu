@@ -1,106 +1,75 @@
 "use client";
 
 import { SECTION } from "@/lib/sections";
-import { ArrowLeft, ArrowRight, Star } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
+import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import type { Swiper as SwiperType } from "swiper";
-
 import "swiper/css";
 import "swiper/css/navigation";
 
-const reviews = [
+const REVIEW_IMAGES = [
   {
-    name: "Petra Nováková",
-    role: "Domácnost",
-    text:
-      "Přišli včas, uklidili pečlivě i za skříňkami v koupelně. Po měsíci pravidelného úklidu je vidět velký rozdíl — určitě doporučuji.",
+    src: "/assets/reviews/hodnoceni-olga-v.png",
+    alt: "Hodnocení od Olgy V. — úklid domácnosti",
+    width: 1024,
+    height: 994,
   },
   {
-    name: "Martin Horák",
-    role: "Malá firma",
-    text:
-      "Máme kanceláře po celém patře a potřebovali jsme někoho spolehlivého. Komunikace snadná, úklid vždy v pátek odpoledne bez připomínání.",
+    src: "/assets/reviews/hodnoceni-lucie-b.png",
+    alt: "Hodnocení od Lucie B. — úklid domácnosti",
+    width: 784,
+    height: 498,
   },
   {
-    name: "Jana Svobodová",
-    role: "Domácnost",
-    text:
-      "Oceňuji diskrétnost a to, že nemusím řešit vlastní prostředky. Jednorázový úklid po malování zvládli na jedničku.",
+    src: "/assets/reviews/hodnoceni-michal-s.png",
+    alt: "Hodnocení od Michala S. — úklid domácnosti",
+    width: 1024,
+    height: 480,
   },
-];
+  {
+    src: "/assets/reviews/hodnoceni-stepan-h.png",
+    alt: "Hodnocení od Štěpána H.",
+    width: 780,
+    height: 546,
+  },
+  {
+    src: "/assets/reviews/hodnoceni-katerina-s.png",
+    alt: "Hodnocení od Kateřiny Š. — úklid domácnosti",
+    width: 778,
+    height: 458,
+  },
+] as const;
 
-function ReviewCard({
-  name,
-  role,
-  text,
-}: {
-  name: string;
-  role: string;
-  text: string;
-}) {
-  return (
-    <article
-      className="rounded-xl p-10 grid grid-cols-1 sm:grid-cols-[100px_1fr] gap-4 items-center border border-gray-200 border-t-4 border-t-main border-r-4 border-r-main relative"
-    >
-      <Image
-        src="/img/comments/cmnt1.webp"
-        alt=""
-        width={100}
-        height={100}
-        className="w-full h-auto max-w-25"
-      />
-      <div className="grid gap-0">
-        <div className="flex flex-wrap justify-between items-center gap-4">
-          <div>
-            <p className="text-lg font-semibold">{name}</p>
-            <p>{role}</p>
-          </div>
-          <Image
-            src="/img/icons/quote.svg"
-            width={50}
-            height={50}
-            alt=""
-            className="w-auto h-auto max-w-18.75 absolute top-2 right-2"
-          />
-        </div>
-        <div className="flex gap-1 items-center text-yellow-500 mt-2 mb-4">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <Star key={i} size={24} fill="currentColor" />
-          ))}
-        </div>
-        <p className="text-sm">{text}</p>
-      </div>
-    </article>
-  );
-}
+const AUTOPLAY_MS = 10_000;
 
 export function FeedbackSection() {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
-  const swiperRef = useRef<SwiperType | null>(null);
-
   return (
     <section className="page-section section section-reviews">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 id={SECTION.reviews} className="section-anchor">
-              Co o nás říkají zákazníci
-            </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
+          <div className="md:py-2">
+            <h2>Hodnocení našich klientů</h2>
             <p className="mt-4">
-              Reference jsou zatím ukázkové — po prvních zakázkách je nahradíme
-              skutečnými hodnoceními od Vás.
+              Nic nás nepotěší tak, jako kladná reference nebo pozitivní zpětná vazba od
+              našeho zákazníka.
             </p>
           </div>
-          <div className="relative">
+          <div className="relative min-w-0 flex items-center justify-center">
+            <div
+              id={SECTION.reviews}
+              className="section-anchor relative w-full max-w-[20rem] sm:max-w-[22rem] md:max-w-[26rem] lg:max-w-[28rem]"
+            >
             <Swiper
-              modules={[Navigation]}
+              modules={[Navigation, Autoplay]}
               loop
-              onSwiper={(s) => {
-                swiperRef.current = s;
+              autoplay={{
+                delay: AUTOPLAY_MS,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
               }}
               navigation={{
                 prevEl: prevRef.current,
@@ -116,28 +85,41 @@ export function FeedbackSection() {
                 }
               }}
             >
-              {reviews.map((r, i) => (
-                <SwiperSlide key={i}>
-                  <ReviewCard {...r} />
+              {REVIEW_IMAGES.map((item) => (
+                <SwiperSlide key={item.src}>
+                  <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm">
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      width={item.width}
+                      height={item.height}
+                      sizes="(max-width: 768px) 90vw, (max-width: 1024px) 26rem, 28rem"
+                      className="w-full h-auto object-contain"
+                      unoptimized
+                    />
+                  </div>
                 </SwiperSlide>
               ))}
             </Swiper>
             <button
               ref={prevRef}
               type="button"
-              className="swiper-prev absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white text-dark p-2 rounded-full shadow w-10 h-10 flex items-center justify-center"
-              title="Předchozí"
+              className="swiper-prev absolute -left-3 sm:-left-4 top-1/2 -translate-y-1/2 z-10 bg-main text-white rounded-full shadow-md w-10 h-10 flex items-center justify-center hover:bg-green-700 transition-colors"
+              title="Předchozí hodnocení"
+              aria-label="Předchozí hodnocení"
             >
-              <ArrowLeft size={20} />
+              <ArrowLeft size={20} strokeWidth={2.5} />
             </button>
             <button
               ref={nextRef}
               type="button"
-              className="swiper-next absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white text-dark p-2 rounded-full shadow w-10 h-10 flex items-center justify-center"
-              title="Další"
+              className="swiper-next absolute -right-3 sm:-right-4 top-1/2 -translate-y-1/2 z-10 bg-main text-white rounded-full shadow-md w-10 h-10 flex items-center justify-center hover:bg-green-700 transition-colors"
+              title="Další hodnocení"
+              aria-label="Další hodnocení"
             >
-              <ArrowRight size={20} />
+              <ArrowRight size={20} strokeWidth={2.5} />
             </button>
+            </div>
           </div>
         </div>
       </div>

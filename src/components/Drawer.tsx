@@ -20,7 +20,7 @@ export function Drawer() {
             <li key={item.url}>
               <HeaderLink
                 href={item.url}
-                className="rounded-lg hover:bg-gray-100 font-medium"
+                className="rounded-lg text-gray-800 hover:bg-gray-100 hover:text-main font-medium"
               >
                 {item.title}
               </HeaderLink>

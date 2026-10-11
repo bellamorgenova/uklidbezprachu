@@ -1,7 +1,4 @@
-"use client";
-
 import { SECTION } from "@/lib/sections";
-import { useState } from "react";
 
 type Plan = {
   name: string;
@@ -10,52 +7,63 @@ type Plan = {
   features: string[];
 };
 
-const monthly: Plan[] = [
+/** Pořadí odpovídá službám na webu (3 + 2 v mřížce). */
+const PLANS: Plan[] = [
   {
-    name: "Základní",
-    price: "1 490",
-    period: "měsíčně",
+    name: "Běžný úklid",
+    price: "300",
+    period: "hodina",
     features: [
-      "Utření prachu ze všech dostupných ploch",
-      "Vytření podlah",
-      "Vysátí koberců a čalounění",
-      "Úklid kuchyně (linky, dřez, spotřebiče zvenku)",
-      "Úklid koupelny a WC",
-      "Vyprázdnění košů",
+      "Běžný úklid bytu nebo domu",
+      "Kuchyně, koupelna, obývací pokoje",
+      "Vysátí a vytření podlah",
+      "Plán podle Vašeho seznamu",
     ],
   },
   {
-    name: "Rozšířený",
-    price: "1 890",
-    period: "měsíčně",
+    name: "Tepování",
+    price: "250 - 2 000",
+    period: "ks",
     features: [
-      "Vše ze Základního balíčku",
-      "Detailnější utírání prachu",
-      "Mytí kuchyňských skříněk zvenku",
-      "Vnitřek mikrovlnné trouby",
-      "Výměna ložního prádla (dle dohody)",
-      "Lokální odstranění skvrn na zdech a dveřích",
+      "Dle velikosti a rozsahu znečištění - koberce, pohovky, křesla, židle, apod.",
+      "Profesionální technika",
+      "Šetrné čištění dle materiálu",
+      "Rozsah předem sladíme",
     ],
   },
   {
-    name: "Kompletní",
-    price: "2 490",
-    period: "měsíčně",
+    name: "Generální úklid",
+    price: "300",
+    period: "hodina",
     features: [
-      "Vše z Rozšířeného balíčku",
-      "Hlubší úklid kuchyně",
-      "Lišty, rámy dveří a větrací mřížky",
-      "Úklid ve skříních a spíži (po dohodě)",
-      "Čištění koberců a čalounění — lokálně",
-      "Důkladný úklid koupelny včetně spár",
+      "Hlubší úklid jednou za čas",
+      "Lišty, skříňky, za spotřebiči",
+      "Ideální po rekonstrukci nebo zimě",
+      "Okna, včetně rámů",
     ],
   },
-];
-
-const yearly: Plan[] = [
-  { ...monthly[0], price: "3 990", period: "ročně" },
-  { ...monthly[1], price: "4 590", period: "ročně" },
-  { ...monthly[2], price: "5 990", period: "ročně" },
+  {
+    name: "Debordelizace",
+    price: "350",
+    period: "hodina",
+    features: [
+      "Objednávku kontejneru případně zařídíme na Vaše náklady",
+      "Uvolnění prostoru v domácnosti",
+      "Citlivý a praktický přístup",
+      "Příprava na běžný úklid",
+    ],
+  },
+  {
+    name: "Úklid kanceláří",
+    price: "300",
+    period: "hodina",
+    features: [
+      "Pravidelný i jednorázový úklid",
+      "Mimo pracovní dobu nebo o víkendu",
+      "Desky, podlahy, kuchyňka, WC",
+      "Přizpůsobení Vašemu provozu",
+    ],
+  },
 ];
 
 function PlanCard({ plan }: { plan: Plan }) {
@@ -64,14 +72,15 @@ function PlanCard({ plan }: { plan: Plan }) {
       className="bg-white p-6 rounded-xl text-black w-full grid md:grid-cols-2 lg:grid-cols-1 items-center shadow gap-4"
     >
       <div>
-        <h2 className="text-lg mb-2 uppercase">{plan.name}</h2>
+        <h3 className="text-lg mb-2 uppercase">{plan.name}</h3>
         <div
           className="flex gap-2 items-end bg-main text-white justify-center rounded-lg p-3"
         >
           <p className="text-3xl font-bold">
-            {plan.price} <span className="text-base font-normal">Kč</span> /
+            {plan.price} <span className="text-base font-normal">Kč</span>
+            {plan.period ? " /" : ""}
           </p>
-          <small>{plan.period}</small>
+          {plan.period ? <small>{plan.period}</small> : null}
         </div>
       </div>
       <ul className="space-y-2 text-xs text-left pl-4 list-disc mt-4 md:col-span-2 lg:col-span-1">
@@ -84,54 +93,40 @@ function PlanCard({ plan }: { plan: Plan }) {
 }
 
 export function PricingSection() {
-  const [tab, setTab] = useState<"monthly" | "yearly">("monthly");
-  const plans = tab === "monthly" ? monthly : yearly;
+  const topRow = PLANS.slice(0, 3);
+  const bottomRow = PLANS.slice(3, 5);
 
   return (
-    <section className="page-section section section-plan grid">
+    <section className="page-section section section-plan relative">
       <div
-        className="bg-main text-white [grid-area:1/1/2/2] bg-no-repeat bg-cover h-[30em] bg-[url(/img/bg/bg1.webp)] py-20"
+        className="absolute inset-0 bg-main"
+        aria-hidden
       />
-      <div className="[grid-area:1/1/2/2] text-white pt-20">
+      <div className="relative z-10 text-white pt-20 pb-16">
         <div className="container text-center">
-          <div className="mx-auto max-w-xl mb-4">
+          <div className="mx-auto max-w-xl mb-10">
             <h2 id={SECTION.pricing} className="section-anchor">
-              Orientační ceník služeb
+              Ceník služeb
             </h2>
             <p className="text-sm mt-2 opacity-90">
-              Přesnou cenu upřesníme podle velikosti prostor a rozsahu práce.
+              Nejedeme na rychlost, jedeme na přesnost
             </p>
           </div>
-          <div className="mt-5 grid w-full">
-            <div
-              className="tabs mx-auto justify-center rounded-full border border-black/30 inline-flex bg-gray-50 text-black p-2 gap-3"
-            >
-              <button
-                type="button"
-                className={`tab ${tab === "monthly" ? "tab-active" : ""}`}
-                onClick={() => setTab("monthly")}
-              >
-                Měsíčně
-              </button>
-              <button
-                type="button"
-                className={`tab ${tab === "yearly" ? "tab-active" : ""}`}
-                onClick={() => setTab("yearly")}
-              >
-                Ročně
-              </button>
+          <div className="flex flex-col gap-10 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {topRow.map((plan) => (
+                <PlanCard key={plan.name} plan={plan} />
+              ))}
             </div>
-            <div className="mt-10">
-              <div className="tab-content block">
-                <div
-                  className="flex flex-wrap lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full"
-                >
-                  {plans.map((plan) => (
-                    <PlanCard key={plan.name} plan={plan} />
-                  ))}
-                </div>
+            {bottomRow.length > 0 && (
+              <div
+                className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-3xl lg:max-w-4xl mx-auto"
+              >
+                {bottomRow.map((plan) => (
+                  <PlanCard key={plan.name} plan={plan} />
+                ))}
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

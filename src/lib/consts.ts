@@ -16,4 +16,5 @@ export const NAV_MENU = [
   { url: sectionHref(SECTION.services), title: "Služby" },
   { url: sectionHref(SECTION.team), title: "Tým" },
   { url: sectionHref(SECTION.pricing), title: "Ceník" },
+  { url: sectionHref(SECTION.reviews), title: "Reference" },
 ];

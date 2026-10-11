@@ -28,7 +28,11 @@ html {
 }
 
 .menu a:not(.btn) {
-  @apply hover:text-main text-base;
+  @apply text-gray-800 hover:text-main text-base;
+}
+
+.header .menu a:not(.btn)[aria-current]:not(:hover) {
+  @apply text-gray-800;
 }
 
 @layer base {
@@ -97,10 +101,6 @@ html {
 
 .breadcrumbs li {
   @apply whitespace-pre-wrap;
-}
-
-a.nav-link-active:not(.btn) {
-  color: var(--color-main);
 }
 
 /* DaisyUI .btn barvu řídí přes --btn-color; vrstva components je dřív než .btn, proto mimo @layer. */
