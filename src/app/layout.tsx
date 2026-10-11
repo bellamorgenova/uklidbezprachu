@@ -29,7 +29,11 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   icons: {
-    icon: [{ url: "/favicon.svg" }, { url: "/favicon.ico" }],
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/img/bezprachu-emblem.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
 };
 
