@@ -1,3 +1,4 @@
+import { sectionHref, SECTION } from "@/lib/sections";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "./Logo";
@@ -12,10 +13,10 @@ export function Header() {
           <Navbar />
           <div className="flex gap-3 ml-auto">
             <Link
-              href="/contact"
+              href={sectionHref(SECTION.contact)}
               className="hidden sm:flex btn bg-main border-main text-white rounded-lg hover:bg-green-600"
             >
-              Get a quote
+              Nezávazná poptávka
             </Link>
             <div className="flex-none lg:hidden">
               <label

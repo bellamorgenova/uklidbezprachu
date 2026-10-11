@@ -17,10 +17,10 @@ export default function HomePage() {
   return (
     <div>
       <Hero />
+      <Welcome />
       <ServicesSection services={services} />
       <Sec1 />
       <TeamSection team={team} />
-      <Welcome />
       <PricingSection />
       <FeedbackSection />
       <NewsSection posts={posts} />

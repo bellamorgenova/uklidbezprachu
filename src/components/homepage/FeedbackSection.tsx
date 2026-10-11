@@ -1,5 +1,6 @@
 "use client";
 
+import { SECTION } from "@/lib/sections";
 import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
@@ -82,7 +83,7 @@ export function FeedbackSection() {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <section className="section section-reviews">
+    <section id={SECTION.reviews} className="page-section section section-reviews">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>

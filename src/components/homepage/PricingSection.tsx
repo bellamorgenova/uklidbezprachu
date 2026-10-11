@@ -1,5 +1,6 @@
 "use client";
 
+import { sectionHref, SECTION } from "@/lib/sections";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -80,7 +81,7 @@ function PlanCard({ plan }: { plan: Plan }) {
         ))}
       </ul>
       <Link
-        href="/contact"
+        href={sectionHref(SECTION.contact)}
         className="btn btn-outline w-full rounded-md font-normal border-main text-main hover:bg-main hover:text-white"
       >
         Book Now
@@ -94,7 +95,7 @@ export function PricingSection() {
   const plans = tab === "monthly" ? monthly : yearly;
 
   return (
-    <section className="section section-plan grid">
+    <section id={SECTION.pricing} className="page-section section section-plan grid">
       <div
         className="bg-main text-white [grid-area:1/1/2/2] bg-no-repeat bg-cover h-[30em] bg-[url(/img/bg/bg1.webp)] py-20"
       />

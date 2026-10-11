@@ -1,9 +1,10 @@
+import { sectionHref, SECTION } from "@/lib/sections";
 import Image from "next/image";
 import Link from "next/link";
 
 export function Sec1() {
   return (
-    <section className="section section-1">
+    <section className="page-section section section-1">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div className="order-2 md:order-1">
@@ -14,7 +15,7 @@ export function Sec1() {
               From residential cleaning services
             </p>
             <Link
-              href="/contact"
+              href={sectionHref(SECTION.contact)}
               className="btn bg-main border-main text-white rounded-lg hover:bg-green-600"
             >
               Get a quote

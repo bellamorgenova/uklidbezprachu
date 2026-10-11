@@ -1,10 +1,12 @@
+import { sectionHref, SECTION } from "@/lib/sections";
 import Image from "next/image";
 import Link from "next/link";
 
 export function Hero() {
   return (
     <section
-      className="section-hero bg-gray-50 py-10 lg:py-20 bg-no-repeat bg-cover relative overflow-hidden z-0"
+      id={SECTION.home}
+      className="page-section section-hero bg-gray-50 py-10 lg:py-20 bg-no-repeat bg-cover relative overflow-hidden z-0"
     >
       <Image
         src="/img/bg/bg0.webp"
@@ -25,13 +27,13 @@ export function Hero() {
           </p>
           <div className="mt-6 grid grid-cols-2 gap-4 max-w-sm mx-auto sm:mx-0">
             <Link
-              href="/contact"
+              href={sectionHref(SECTION.contact)}
               className="btn bg-main border-main text-white rounded-lg hover:bg-green-600"
             >
               Get Start Now
             </Link>
             <Link
-              href="/service"
+              href={sectionHref(SECTION.services)}
               className="btn btn-outline hover:bg-white hover:border-white rounded-lg"
             >
               View all Services

@@ -1,3 +1,4 @@
+import { sectionHref, SECTION } from "@/lib/sections";
 import { Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,7 +13,7 @@ const perks = [
 
 export function Welcome() {
   return (
-    <section className="section section-welcome">
+    <section id={SECTION.about} className="page-section section section-welcome">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <Image
@@ -46,12 +47,12 @@ export function Welcome() {
             </div>
             <div className="mt-6 grid grid-cols-2 gap-4 max-w-sm mx-auto sm:mx-0">
               <Link
-                href="/contact"
+                href={sectionHref(SECTION.contact)}
                 className="btn bg-main border-main text-white rounded-lg hover:bg-green-600"
               >
                 Book Now
               </Link>
-              <Link href="/about" className="btn btn-outline rounded-lg">
+              <Link href={sectionHref(SECTION.services)} className="btn btn-outline rounded-lg">
                 Know More
               </Link>
             </div>

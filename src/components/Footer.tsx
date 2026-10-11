@@ -1,3 +1,4 @@
+import { sectionHref, SECTION } from "@/lib/sections";
 import Link from "next/link";
 import { Logo } from "./Logo";
 
@@ -17,27 +18,27 @@ export function Footer() {
             </div>
             <div className="grid grid-cols-2 gap-10">
               <nav className="grid gap-3">
-                <h3 className="text-xl font-semibold">Company</h3>
-                <Link href="/about" className="hover:underline hover:text-main">
-                  About Us
+                <h3 className="text-xl font-semibold">Firma</h3>
+                <Link href={sectionHref(SECTION.about)} className="hover:underline hover:text-main">
+                  O nás
                 </Link>
-                <Link href="/service" className="hover:underline hover:text-main">
-                  Services
+                <Link href={sectionHref(SECTION.services)} className="hover:underline hover:text-main">
+                  Služby
                 </Link>
-                <Link href="/team" className="hover:underline hover:text-main">
-                  Our Team
+                <Link href={sectionHref(SECTION.team)} className="hover:underline hover:text-main">
+                  Tým
                 </Link>
               </nav>
               <nav className="grid gap-3">
-                <h3 className="text-xl font-semibold">Know More</h3>
-                <Link href="/contact" className="hover:underline hover:text-main">
-                  Support
+                <h3 className="text-xl font-semibold">Informace</h3>
+                <Link href={sectionHref(SECTION.contact)} className="hover:underline hover:text-main">
+                  Kontakt
                 </Link>
                 <Link href="/policy" className="hover:underline hover:text-main">
-                  Privacy Policy
+                  Ochrana osobních údajů
                 </Link>
                 <Link href="/terms" className="hover:underline hover:text-main">
-                  Terms & conditions
+                  Obchodní podmínky
                 </Link>
               </nav>
             </div>

@@ -1,6 +1,6 @@
 import { NewsCard } from "@/components/card/NewsCard";
 import type { BlogFrontmatter, ContentItem } from "@/lib/content";
-import Link from "next/link";
+import { SECTION } from "@/lib/sections";
 
 export function NewsSection({
   posts,
@@ -8,7 +8,7 @@ export function NewsSection({
   posts: ContentItem<BlogFrontmatter>[];
 }) {
   return (
-    <section className="section section-services">
+    <section id={SECTION.blog} className="page-section section section-services">
       <div className="container">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 border-b border-b-main pb-10">
           <h2 className="capitalize">Stay Updated with Our Tips & Service News!</h2>
@@ -16,9 +16,9 @@ export function NewsSection({
             <div className="flex flex-wrap justify-between items-center gap-3">
               <p className="font-semibold mb-3 text-xl">Our Blog</p>
               <p>
-                <Link href="/blog" className="text-main underline hover:no-underline">
-                  All news
-                </Link>
+                <a href={`#${SECTION.blog}`} className="text-main underline hover:no-underline">
+                  Všechny články
+                </a>
               </p>
             </div>
             <p className="mb-3">

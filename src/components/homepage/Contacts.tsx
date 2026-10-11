@@ -1,8 +1,10 @@
 import { Mail, MapPin, PhoneCall } from "lucide-react";
 
+import { SECTION } from "@/lib/sections";
+
 export function Contacts() {
   return (
-    <section className="section section-contacts">
+    <section id={SECTION.contact} className="page-section section section-contacts">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div>

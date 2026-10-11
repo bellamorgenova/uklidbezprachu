@@ -1,3 +1,4 @@
+import { ScrollToHash } from "@/components/ScrollToHash";
 import { SiteLayout } from "@/components/SiteLayout";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/lib/consts";
 import type { Metadata } from "next";
@@ -38,8 +39,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="cs">
+    <html lang="cs" className="scroll-smooth">
       <body className={`${atkinson.variable} font-sans antialiased`}>
+        <ScrollToHash />
         <SiteLayout>{children}</SiteLayout>
       </body>
     </html>

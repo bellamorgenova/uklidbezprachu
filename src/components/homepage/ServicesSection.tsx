@@ -1,6 +1,6 @@
 import { ServiceCard } from "@/components/card/ServiceCard";
 import type { ContentItem, ServiceFrontmatter } from "@/lib/content";
-import Link from "next/link";
+import { SECTION } from "@/lib/sections";
 
 export function ServicesSection({
   services,
@@ -8,7 +8,7 @@ export function ServicesSection({
   services: ContentItem<ServiceFrontmatter>[];
 }) {
   return (
-    <section className="section section-services">
+    <section id={SECTION.services} className="page-section section section-services">
       <div className="container">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 border-b border-b-main pb-10">
           <h2 className="capitalize">We always provide the best service</h2>
@@ -16,9 +16,9 @@ export function ServicesSection({
             <div className="flex flex-wrap justify-between items-center gap-3">
               <p className="font-semibold mb-3 text-xl">Services</p>
               <p>
-                <Link href="/service" className="text-main underline hover:no-underline">
-                  All services
-                </Link>
+                <a href={`#${SECTION.services}`} className="text-main underline hover:no-underline">
+                  Všechny služby
+                </a>
               </p>
             </div>
             <p className="mb-3">

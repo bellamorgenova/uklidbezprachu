@@ -1,4 +1,5 @@
 import { NAV_MENU } from "@/lib/consts";
+import { sectionHref, SECTION } from "@/lib/sections";
 import { HeaderLink } from "./HeaderLink";
 import { Logo } from "./Logo";
 
@@ -25,10 +26,10 @@ export function Drawer() {
         </ul>
         <div className="flex flex-col gap-2 items-center w-full mt-auto">
           <a
-            href="/contact"
+            href={sectionHref(SECTION.contact)}
             className="btn bg-main border-main text-white rounded-lg hover:bg-green-600 hover:text-white! w-full"
           >
-            Get a quote
+            Nezávazná poptávka
           </a>
         </div>
       </div>
