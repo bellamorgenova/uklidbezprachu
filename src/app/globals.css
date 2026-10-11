@@ -15,8 +15,12 @@
   @apply my-10 lg:my-20;
 }
 
-.page-section {
-  scroll-margin-top: 6rem;
+html {
+  scroll-padding-top: var(--site-header-offset, 7.25rem);
+}
+
+.section-anchor {
+  scroll-margin-top: var(--site-header-offset, 7.25rem);
 }
 
 .header {

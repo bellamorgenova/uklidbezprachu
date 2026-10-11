@@ -1,8 +1,9 @@
 "use client";
 
+import { scrollToSectionById } from "@/lib/scroll-to-section";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState, type ComponentProps } from "react";
+import { useEffect, useState, type ComponentProps, type MouseEvent } from "react";
 
 type Props = ComponentProps<typeof Link>;
 
@@ -15,7 +16,7 @@ function hrefToString(href: Props["href"]): string {
   return "/";
 }
 
-export function HeaderLink({ href, className, children, ...props }: Props) {
+export function HeaderLink({ href, className, children, onClick, ...props }: Props) {
   const pathname = usePathname();
   const [hash, setHash] = useState("");
   const hrefStr = hrefToString(href);
@@ -40,9 +41,24 @@ export function HeaderLink({ href, className, children, ...props }: Props) {
     isActive = hrefStr === pathname;
   }
 
+  const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    onClick?.(event);
+    if (event.defaultPrevented) return;
+
+    const targetPath = pathPart || "/";
+    const sectionId = hashPart;
+    if (!sectionId || targetPath !== "/" || pathname !== "/") return;
+
+    event.preventDefault();
+    window.history.pushState(null, "", `/#${sectionId}`);
+    scrollToSectionById(sectionId, "smooth");
+    setHash(`#${sectionId}`);
+  };
+
   return (
     <Link
       href={href}
+      onClick={handleClick}
       className={[className, isActive ? "nav-link-active" : ""]
         .filter(Boolean)
         .join(" ")}

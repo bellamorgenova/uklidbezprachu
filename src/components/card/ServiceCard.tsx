@@ -10,8 +10,9 @@ export function ServiceCard({ data }: Props) {
         <Image
           src={data.thumbnail}
           alt={data.title}
-          width={400}
-          height={200}
+          width={1024}
+          height={682}
+          unoptimized
           className="w-full h-auto aspect-2/1 rounded-xl object-cover mb-4"
         />
       )}

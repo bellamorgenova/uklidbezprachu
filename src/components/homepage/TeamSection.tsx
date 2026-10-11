@@ -8,12 +8,14 @@ export function TeamSection({
   team: ContentItem<TeamFrontmatter>[];
 }) {
   return (
-    <section id={SECTION.team} className="page-section section section-services">
+    <section className="page-section section section-services">
       <div className="container">
         <div
           className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 border-b border-b-main pb-10"
         >
-          <h2>Čistota zvládneme jen s dobrým týmem</h2>
+          <h2 id={SECTION.team} className="section-anchor">
+            Čistota zvládneme jen s dobrým týmem
+          </h2>
           <div>
             <p className="font-semibold mb-3 text-xl">Kdo u vás uklízí</p>
             <p className="mb-3">

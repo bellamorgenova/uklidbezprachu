@@ -83,11 +83,13 @@ export function FeedbackSection() {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <section id={SECTION.reviews} className="page-section section section-reviews">
+    <section className="page-section section section-reviews">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
-            <h2>Co o nás říkají zákazníci</h2>
+            <h2 id={SECTION.reviews} className="section-anchor">
+              Co o nás říkají zákazníci
+            </h2>
             <p className="mt-4">
               Reference jsou zatím ukázkové — po prvních zakázkách je nahradíme
               skutečnými hodnoceními od vás.

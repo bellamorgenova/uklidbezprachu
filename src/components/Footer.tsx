@@ -1,5 +1,6 @@
 import { sectionHref, SECTION } from "@/lib/sections";
 import Link from "next/link";
+import { HeaderLink } from "./HeaderLink";
 import { Logo } from "./Logo";
 
 export function Footer() {
@@ -19,15 +20,15 @@ export function Footer() {
             <div className="grid grid-cols-2 gap-10">
               <nav className="grid gap-3">
                 <h3 className="text-xl font-semibold">Firma</h3>
-                <Link href={sectionHref(SECTION.about)} className="hover:underline hover:text-main">
+                <HeaderLink href={sectionHref(SECTION.about)} className="hover:underline hover:text-main">
                   O nás
-                </Link>
-                <Link href={sectionHref(SECTION.services)} className="hover:underline hover:text-main">
+                </HeaderLink>
+                <HeaderLink href={sectionHref(SECTION.services)} className="hover:underline hover:text-main">
                   Služby
-                </Link>
-                <Link href={sectionHref(SECTION.team)} className="hover:underline hover:text-main">
+                </HeaderLink>
+                <HeaderLink href={sectionHref(SECTION.team)} className="hover:underline hover:text-main">
                   Tým
-                </Link>
+                </HeaderLink>
               </nav>
               <nav className="grid gap-3">
                 <h3 className="text-xl font-semibold">Informace</h3>

@@ -4,11 +4,16 @@ import { SECTION } from "@/lib/sections";
 
 export function Contacts() {
   return (
-    <section id={SECTION.contact} className="page-section section section-contacts">
+    <section className="page-section section section-contacts">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div>
-            <h3 className="font-semibold text-xl lg:text-[40px]">Kde nás najdete</h3>
+            <h3
+              id={SECTION.contact}
+              className="section-anchor font-semibold text-xl lg:text-[40px]"
+            >
+              Kde nás najdete
+            </h3>
             <div className="mt-10 grid gap-6">
               <div
                 className="grid grid-cols-[54px_1fr] gap-4 items-center bg-gray-50 border border-gray-200 rounded-lg p-4"

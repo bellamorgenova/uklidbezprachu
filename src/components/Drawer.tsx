@@ -28,12 +28,12 @@ export function Drawer() {
           ))}
         </ul>
         <div className="flex flex-col gap-2 items-stretch w-full mt-auto pt-6">
-          <a
+          <HeaderLink
             href={sectionHref(SECTION.contact)}
             className="btn bg-main border-main text-white rounded-lg hover:bg-green-700 hover:border-green-700 w-full shadow-none"
           >
             {CTA_LABEL}
-          </a>
+          </HeaderLink>
         </div>
       </div>
     </div>

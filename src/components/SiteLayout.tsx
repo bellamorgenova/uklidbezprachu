@@ -1,6 +1,7 @@
+import { Drawer } from "./Drawer";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-import { Drawer } from "./Drawer";
+import { HeaderOffsetSync } from "./HeaderOffsetSync";
 
 export function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -17,6 +18,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
       <div className="drawer-content flex flex-col min-h-screen">
         <main className="min-h-screen flex flex-col">
           <Header />
+          <HeaderOffsetSync />
           {children}
         </main>
         <Footer />

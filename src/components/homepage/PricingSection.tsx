@@ -88,15 +88,16 @@ export function PricingSection() {
   const plans = tab === "monthly" ? monthly : yearly;
 
   return (
-    <section id={SECTION.pricing} className="page-section section section-plan grid">
+    <section className="page-section section section-plan grid">
       <div
         className="bg-main text-white [grid-area:1/1/2/2] bg-no-repeat bg-cover h-[30em] bg-[url(/img/bg/bg1.webp)] py-20"
       />
       <div className="[grid-area:1/1/2/2] text-white pt-20">
         <div className="container text-center">
           <div className="mx-auto max-w-xl mb-4">
-            <p className="text-sm mb-1">Orientační ceník</p>
-            <h2>Balíčky pro pravidelný úklid</h2>
+            <h2 id={SECTION.pricing} className="section-anchor">
+              Orientační ceník služeb
+            </h2>
             <p className="text-sm mt-2 opacity-90">
               Přesnou cenu upřesníme podle velikosti prostor a rozsahu práce.
             </p>

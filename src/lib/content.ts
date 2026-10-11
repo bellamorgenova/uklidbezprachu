@@ -92,7 +92,7 @@ export function getServices(): ContentItem<ServiceFrontmatter>[] {
     pubDate: d.pubDate as Date,
     updatedDate: d.updatedDate as Date | undefined,
     featured: d.featured as boolean | undefined,
-  })).sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+  })).sort((a, b) => a.id.localeCompare(b.id, "cs"));
 }
 
 export function getService(id: string): ContentItem<ServiceFrontmatter> | undefined {
