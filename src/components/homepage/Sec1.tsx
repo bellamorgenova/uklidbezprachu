@@ -16,11 +16,12 @@ export function Sec1() {
           </div>
           <div className="order-1 md:order-2">
             <Image
-              src="/img/img1.webp"
-              alt=""
-              width={478}
-              height={421}
-              className="w-auto h-auto m-auto"
+              src="/img/kvalitni-prace-rukou.jpg"
+              alt="Podání ruky mezi uklízečem v zelené rukavici a klientem — dohoda a příjemný přístup"
+              width={1024}
+              height={576}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="w-full h-auto max-w-xl m-auto rounded-xl object-cover"
             />
           </div>
         </div>

@@ -41,6 +41,8 @@ export function HeaderLink({ href, className, children, onClick, ...props }: Pro
     isActive = hrefStr === pathname;
   }
 
+  const isButtonLink = typeof className === "string" && className.includes("btn");
+
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     onClick?.(event);
     if (event.defaultPrevented) return;
@@ -59,7 +61,7 @@ export function HeaderLink({ href, className, children, onClick, ...props }: Pro
     <Link
       href={href}
       onClick={handleClick}
-      className={[className, isActive ? "nav-link-active" : ""]
+      className={[className, isActive && !isButtonLink ? "nav-link-active" : ""]
         .filter(Boolean)
         .join(" ")}
       {...props}

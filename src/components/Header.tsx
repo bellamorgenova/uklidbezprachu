@@ -1,4 +1,4 @@
-import { CTA_LABEL } from "@/lib/consts";
+import { CTA_BUTTON_CLASS, CTA_LABEL } from "@/lib/consts";
 import { sectionHref, SECTION } from "@/lib/sections";
 import { Menu } from "lucide-react";
 import { HeaderLink } from "./HeaderLink";
@@ -23,7 +23,7 @@ export function Header() {
             <Navbar />
             <HeaderLink
               href={sectionHref(SECTION.contact)}
-              className="btn btn-md bg-main border-main text-white rounded-lg hover:bg-green-700 hover:border-green-700 shadow-none font-medium px-5 whitespace-nowrap"
+              className={`${CTA_BUTTON_CLASS} btn-md px-5 whitespace-nowrap`}
             >
               {CTA_LABEL}
             </HeaderLink>

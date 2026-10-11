@@ -6,11 +6,10 @@ import { Sec1 } from "@/components/homepage/Sec1";
 import { ServicesSection } from "@/components/homepage/ServicesSection";
 import { TeamSection } from "@/components/homepage/TeamSection";
 import { Welcome } from "@/components/homepage/Welcome";
-import { getServices, getTeamMembers } from "@/lib/content";
+import { getServices } from "@/lib/content";
 
 export default function HomePage() {
   const services = getServices();
-  const team = getTeamMembers().slice(0, 3);
 
   return (
     <div>
@@ -18,7 +17,7 @@ export default function HomePage() {
       <Welcome />
       <ServicesSection services={services} />
       <Sec1 />
-      <TeamSection team={team} />
+      <TeamSection />
       <PricingSection />
       <FeedbackSection />
       <Contacts />

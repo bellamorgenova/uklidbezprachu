@@ -42,7 +42,7 @@ export default function TermsPage() {
         </p>
         <p className="text-sm text-gray-600 mt-8">
           Pracovní verze — doplňte identifikaci podnikatele a reklamační postup podle
-          vaší praxe.
+          Vaší praxe.
         </p>
       </div>
     </section>

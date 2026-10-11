@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 import Image from "next/image";
 
 const perks = [
-  "Úklid podle vašeho seznamu",
+  "Úklid podle Vašeho seznamu",
   "Důraz na detail",
   "Flexibilní plánování termínů",
   "Férové ceny",
@@ -32,7 +32,7 @@ export function Welcome() {
           </div>
           <div>
             <h2 id={SECTION.about} className="section-anchor">
-              Úklid bez prachu — váš partner pro čistý domov i firmu
+              Úklid bez prachu — Váš partner pro čistý domov i firmu
             </h2>
             <p>
               Jsme lokální úklidová služba, na kterou se můžete spolehnout.

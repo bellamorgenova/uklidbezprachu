@@ -1,4 +1,4 @@
-import { CTA_LABEL, NAV_MENU } from "@/lib/consts";
+import { CTA_BUTTON_CLASS, CTA_LABEL, NAV_MENU } from "@/lib/consts";
 import { sectionHref, SECTION } from "@/lib/sections";
 import { HeaderLink } from "./HeaderLink";
 import { Logo } from "./Logo";
@@ -30,7 +30,7 @@ export function Drawer() {
         <div className="flex flex-col gap-2 items-stretch w-full mt-auto pt-6">
           <HeaderLink
             href={sectionHref(SECTION.contact)}
-            className="btn bg-main border-main text-white rounded-lg hover:bg-green-700 hover:border-green-700 w-full shadow-none"
+            className={`${CTA_BUTTON_CLASS} w-full`}
           >
             {CTA_LABEL}
           </HeaderLink>

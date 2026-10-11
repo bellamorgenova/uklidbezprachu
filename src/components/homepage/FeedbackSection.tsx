@@ -92,7 +92,7 @@ export function FeedbackSection() {
             </h2>
             <p className="mt-4">
               Reference jsou zatím ukázkové — po prvních zakázkách je nahradíme
-              skutečnými hodnoceními od vás.
+              skutečnými hodnoceními od Vás.
             </p>
           </div>
           <div className="relative">

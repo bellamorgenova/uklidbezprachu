@@ -1,5 +1,6 @@
 import { TeamCard } from "@/components/card/TeamCard";
-import { getTeamMembers } from "@/lib/content";
+import { TeamHiringCard } from "@/components/card/TeamHiringCard";
+import { getTeamMember } from "@/lib/content";
 import { sectionHref, SECTION } from "@/lib/sections";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function TeamListPage() {
-  const team = getTeamMembers();
+  const bella = getTeamMember("t1");
   return (
     <section className="section">
       <div className="container">
@@ -19,12 +20,15 @@ export default function TeamListPage() {
             <li><Link href={sectionHref(SECTION.team)}>Tým</Link></li>
           </ul>
         </div>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
-          {team.map((person) => (
-            <li key={person.id}>
-              <TeamCard id={person.id} data={person.data} />
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-10 items-stretch max-w-4xl">
+          {bella && (
+            <li>
+              <TeamCard id={bella.id} data={bella.data} />
             </li>
-          ))}
+          )}
+          <li>
+            <TeamHiringCard />
+          </li>
         </ul>
       </div>
     </section>

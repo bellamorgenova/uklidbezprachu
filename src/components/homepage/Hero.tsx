@@ -24,8 +24,8 @@ export function Hero() {
             Pečlivý úklid domácností i kanceláří, bez zbytečných starostí
           </h1>
           <p className="text-dark/90 text-base sm:text-lg leading-relaxed">
-            Ušetříme vám čas — přijedeme v termínu, který vám vyhoví, uklidíme
-            podle vašeho seznamu a pracujeme s prostředky, které máte doma nebo
+            Ušetříme Vám čas — přijedeme v termínu, který Vám vyhoví, uklidíme
+            podle Vašeho seznamu a pracujeme s prostředky, které máte doma nebo
             ve firmě, případně zajistíme ve vlastní režii.
           </p>
         </div>

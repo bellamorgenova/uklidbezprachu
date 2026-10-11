@@ -22,7 +22,7 @@ export function ServicesSection({
           <div>
             <p className="font-semibold mb-3 text-xl">...a umíme!</p>
             <p className="mb-3">
-              Plán úklidu přizpůsobíme vašim potřebám — většina zákazníků volí
+              Plán úklidu přizpůsobíme Vašim potřebám — většina zákazníků volí
               pravidelný úklid v týdenním, čtrnáctidenním nebo měsíčním režimu.
             </p>
           </div>

@@ -29,8 +29,8 @@ export default function PolicyPage() {
         </p>
         <h2 className="h4">2. Účel a právní základ</h2>
         <p>
-          Údaje z poptávky používáme k tomu, abychom vás mohli kontaktovat a připravit
-          nabídku úklidu. Právním základem je jednání o smlouvě a váš souhlas odesláním
+          Údaje z poptávky používáme k tomu, abychom Vás mohli kontaktovat a připravit
+          nabídku úklidu. Právním základem je jednání o smlouvě a Váš souhlas odesláním
           formuláře.
         </p>
         <h2 className="h4">3. Doba uchování</h2>

@@ -27,7 +27,7 @@ html {
   @apply text-lg;
 }
 
-.menu a {
+.menu a:not(.btn) {
   @apply hover:text-main text-base;
 }
 
@@ -99,6 +99,36 @@ html {
   @apply whitespace-pre-wrap;
 }
 
-a.nav-link-active {
+a.nav-link-active:not(.btn) {
   color: var(--color-main);
+}
+
+/* DaisyUI .btn barvu řídí přes --btn-color; vrstva components je dřív než .btn, proto mimo @layer. */
+.btn.btn-cta {
+  --btn-color: var(--color-main);
+  --btn-fg: var(--color-white);
+  --btn-border: var(--color-main);
+  box-shadow: none;
+  font-weight: 500;
+  transition-property: color, background-color, border-color, box-shadow, transform;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.btn.btn-cta:hover {
+  --btn-color: var(--color-green-700);
+  --btn-fg: var(--color-white);
+  color: var(--color-white);
+}
+
+.btn.btn-cta:active {
+  --btn-color: var(--color-green-800);
+  transform: scale(0.98);
+}
+
+.btn.btn-cta:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--color-white),
+    0 0 0 4px var(--color-main);
 }
