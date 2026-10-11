@@ -84,15 +84,27 @@ export function getBlogPost(id: string): ContentItem<BlogFrontmatter> | undefine
   return getBlogPosts().find((p) => p.id === id);
 }
 
+/** Pořadí služeb na homepage a v přehledu. */
+const SERVICE_DISPLAY_ORDER = ["s2", "s4", "s3", "s5", "s1"];
+
 export function getServices(): ContentItem<ServiceFrontmatter>[] {
-  return readMarkdownDir("service", (d) => ({
+  const items = readMarkdownDir("service", (d) => ({
     title: d.title as string,
     description: d.description as string,
     thumbnail: d.thumbnail as string | undefined,
     pubDate: d.pubDate as Date,
     updatedDate: d.updatedDate as Date | undefined,
     featured: d.featured as boolean | undefined,
-  })).sort((a, b) => a.id.localeCompare(b.id, "cs"));
+  }));
+
+  return items.sort((a, b) => {
+    const ia = SERVICE_DISPLAY_ORDER.indexOf(a.id);
+    const ib = SERVICE_DISPLAY_ORDER.indexOf(b.id);
+    if (ia === -1 && ib === -1) return a.id.localeCompare(b.id, "cs");
+    if (ia === -1) return 1;
+    if (ib === -1) return -1;
+    return ia - ib;
+  });
 }
 
 export function getService(id: string): ContentItem<ServiceFrontmatter> | undefined {

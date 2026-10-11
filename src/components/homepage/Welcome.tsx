@@ -3,11 +3,11 @@ import { Check } from "lucide-react";
 import Image from "next/image";
 
 const perks = [
-  "Prověřený tým",
-  "Termín často už do druhého dne",
   "Úklid podle vašeho seznamu",
   "Důraz na detail",
+  "Flexibilní plánování termínů",
   "Férové ceny",
+  "Vždy s úsměvem",
 ];
 
 const ABOUT_PHOTO_WIDTH = 691;
@@ -36,8 +36,9 @@ export function Welcome() {
             </h2>
             <p>
               Jsme lokální úklidová služba, na kterou se můžete spolehnout.
-              Domácnosti, kanceláře i jednorázové úklidy po rekonstrukci zvládneme
-              s rozmyslem a bez zbytečných komplikací.
+              Domácnosti, kanceláře, jednorázové úklidy po rekonstrukci či malování,
+              generální úklidy i debordelizaci zvládneme s rozmyslem a bez zbytečných
+              komplikací.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 my-6 gap-4">
               {perks.map((label) => (

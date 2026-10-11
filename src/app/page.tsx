@@ -9,7 +9,7 @@ import { Welcome } from "@/components/homepage/Welcome";
 import { getServices, getTeamMembers } from "@/lib/content";
 
 export default function HomePage() {
-  const services = getServices().slice(0, 4);
+  const services = getServices();
   const team = getTeamMembers().slice(0, 3);
 
   return (
