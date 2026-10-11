@@ -1,4 +1,4 @@
-import { NAV_MENU } from "@/lib/consts";
+import { CTA_LABEL, NAV_MENU } from "@/lib/consts";
 import { sectionHref, SECTION } from "@/lib/sections";
 import { HeaderLink } from "./HeaderLink";
 import { Logo } from "./Logo";
@@ -29,7 +29,7 @@ export function Drawer() {
             href={sectionHref(SECTION.contact)}
             className="btn bg-main border-main text-white rounded-lg hover:bg-green-600 hover:text-white! w-full"
           >
-            Nezávazná poptávka
+            {CTA_LABEL}
           </a>
         </div>
       </div>

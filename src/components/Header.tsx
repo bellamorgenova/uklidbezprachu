@@ -1,3 +1,4 @@
+import { CTA_LABEL } from "@/lib/consts";
 import { sectionHref, SECTION } from "@/lib/sections";
 import { Menu } from "lucide-react";
 import Link from "next/link";
@@ -16,7 +17,7 @@ export function Header() {
               href={sectionHref(SECTION.contact)}
               className="hidden sm:flex btn bg-main border-main text-white rounded-lg hover:bg-green-600"
             >
-              Nezávazná poptávka
+              {CTA_LABEL}
             </Link>
             <div className="flex-none lg:hidden">
               <label

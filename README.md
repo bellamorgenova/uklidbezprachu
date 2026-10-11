@@ -28,3 +28,9 @@ Postup propojení GitHub → Vercel → Forpsi je v [docs/deploy-forpsi-vercel.m
 
 - **Teď:** veškerý projektový kontext (rozhodnutí, obsah, poznámky k webu) drž v této lokální složce — zejména v `docs/`.
 - **Po napojení GitHubu:** stejné informace patří do repozitáře; GitHub bude hlavní zdroj pravdy pro budoucí práci na webu.
+
+## Nasazení (git + Vercel)
+
+- Agent připraví změny lokálně a **navrhne commit + push** na `main` (→ automatický deploy na Vercelu).
+- **Push provede jen po výslovném schválení uživatele** (např. „pushni“, „schváleno“, „ok deploy“).
+- Bez schválení: žádný `git push`, žádný commit, pokud o commit výslovně nepožádáš.

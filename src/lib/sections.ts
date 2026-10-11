@@ -4,7 +4,6 @@ export const SECTION = {
   services: "sluzby",
   about: "o-nas",
   team: "tym",
-  blog: "blog",
   contact: "kontakt",
   pricing: "cenik",
   reviews: "reference",

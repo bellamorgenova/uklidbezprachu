@@ -1,6 +1,5 @@
-import { sectionHref, SECTION } from "@/lib/sections";
+import { SECTION } from "@/lib/sections";
 import Image from "next/image";
-import Link from "next/link";
 
 export function Hero() {
   return (
@@ -25,20 +24,6 @@ export function Hero() {
             We provide performing cleaning tasks using the least amount of time,
             energy, and money.
           </p>
-          <div className="mt-6 grid grid-cols-2 gap-4 max-w-sm mx-auto sm:mx-0">
-            <Link
-              href={sectionHref(SECTION.contact)}
-              className="btn bg-main border-main text-white rounded-lg hover:bg-green-600"
-            >
-              Get Start Now
-            </Link>
-            <Link
-              href={sectionHref(SECTION.services)}
-              className="btn btn-outline hover:bg-white hover:border-white rounded-lg"
-            >
-              View all Services
-            </Link>
-          </div>
         </div>
       </div>
     </section>

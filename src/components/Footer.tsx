@@ -31,9 +31,6 @@ export function Footer() {
               </nav>
               <nav className="grid gap-3">
                 <h3 className="text-xl font-semibold">Informace</h3>
-                <Link href={sectionHref(SECTION.contact)} className="hover:underline hover:text-main">
-                  Kontakt
-                </Link>
                 <Link href="/policy" className="hover:underline hover:text-main">
                   Ochrana osobních údajů
                 </Link>

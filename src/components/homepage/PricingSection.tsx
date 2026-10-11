@@ -1,7 +1,6 @@
 "use client";
 
-import { sectionHref, SECTION } from "@/lib/sections";
-import Link from "next/link";
+import { SECTION } from "@/lib/sections";
 import { useState } from "react";
 
 type Plan = {
@@ -62,7 +61,7 @@ const yearly: Plan[] = [
 function PlanCard({ plan }: { plan: Plan }) {
   return (
     <article
-      className="bg-white p-6 rounded-xl text-black w-full grid md:grid-cols-3 lg:grid-cols-1 items-center shadow gap-4"
+      className="bg-white p-6 rounded-xl text-black w-full grid md:grid-cols-2 lg:grid-cols-1 items-center shadow gap-4"
     >
       <div>
         <h2 className="text-lg mb-2 uppercase">{plan.name}</h2>
@@ -75,17 +74,11 @@ function PlanCard({ plan }: { plan: Plan }) {
           <small>{plan.period}</small>
         </div>
       </div>
-      <ul className="mb-6 space-y-2 text-xs text-left pl-4 list-disc mt-4">
+      <ul className="space-y-2 text-xs text-left pl-4 list-disc mt-4 md:col-span-2 lg:col-span-1">
         {plan.features.map((f) => (
           <li key={f}>{f}</li>
         ))}
       </ul>
-      <Link
-        href={sectionHref(SECTION.contact)}
-        className="btn btn-outline w-full rounded-md font-normal border-main text-main hover:bg-main hover:text-white"
-      >
-        Book Now
-      </Link>
     </article>
   );
 }

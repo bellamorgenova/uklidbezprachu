@@ -1,6 +1,4 @@
-import { sectionHref, SECTION } from "@/lib/sections";
 import Image from "next/image";
-import Link from "next/link";
 
 export function Sec1() {
   return (
@@ -14,12 +12,6 @@ export function Sec1() {
               We provide comprehensive cleaning services tailored to your needs.
               From residential cleaning services
             </p>
-            <Link
-              href={sectionHref(SECTION.contact)}
-              className="btn bg-main border-main text-white rounded-lg hover:bg-green-600"
-            >
-              Get a quote
-            </Link>
           </div>
           <div className="order-1 md:order-2">
             <Image

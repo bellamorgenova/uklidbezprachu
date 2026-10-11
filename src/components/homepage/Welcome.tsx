@@ -1,7 +1,6 @@
-import { sectionHref, SECTION } from "@/lib/sections";
+import { SECTION } from "@/lib/sections";
 import { Check } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 const perks = [
   "Vetted professionals",
@@ -44,17 +43,6 @@ export function Welcome() {
                   <p className="font-semibold text-lg">{label}</p>
                 </div>
               ))}
-            </div>
-            <div className="mt-6 grid grid-cols-2 gap-4 max-w-sm mx-auto sm:mx-0">
-              <Link
-                href={sectionHref(SECTION.contact)}
-                className="btn bg-main border-main text-white rounded-lg hover:bg-green-600"
-              >
-                Book Now
-              </Link>
-              <Link href={sectionHref(SECTION.services)} className="btn btn-outline rounded-lg">
-                Know More
-              </Link>
             </div>
           </div>
         </div>
