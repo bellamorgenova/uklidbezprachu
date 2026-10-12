@@ -17,8 +17,8 @@ type LogoProps = {
 export function Logo({ onDarkBackground = false, compact = false }: LogoProps) {
   /** Výška v souladu s btn-md v hlavičce; soubor je ořezaný bez bílých okrajů. */
   const heightClass = compact
-    ? "h-[66px] sm:h-[74px] md:h-[90px] w-auto max-w-[min(78vw,22rem)] sm:max-w-none"
-    : "h-[66px] md:h-[90px] w-auto max-w-full";
+    ? "h-[76px] sm:h-[84px] md:h-[100px] w-auto max-w-[min(78vw,22rem)] sm:max-w-none"
+    : "h-[76px] md:h-[100px] w-auto max-w-full";
 
   return (
     <Link

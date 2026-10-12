@@ -5,7 +5,7 @@ import { useEffect } from "react";
 const HEADER_SELECTOR = "header.header";
 const GAP_PX = 12;
 
-/** Synchronizuje CSS proměnnou s reálnou výškou sticky hlavičky (logo 80px atd.). */
+/** Synchronizuje CSS proměnnou s reálnou výškou sticky hlavičky (včetně loga). */
 export function HeaderOffsetSync() {
   useEffect(() => {
     const header = document.querySelector(HEADER_SELECTOR);
